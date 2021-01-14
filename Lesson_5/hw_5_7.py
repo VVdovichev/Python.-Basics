@@ -12,8 +12,7 @@ with open('file_7.txt', 'r') as file:
     if i != 0:
         prof_aver = prof / i
     pr = {'Средняя прибыль': round(prof_aver)}
-    profit.update(pr)
-    my_list = [profit]
+    my_list = [profit, pr]
     print(f'Прибыль каждой компании:\n{my_list}')
 with open('file_7.json', 'w') as write_js:
     json.dump(my_list, write_js)
