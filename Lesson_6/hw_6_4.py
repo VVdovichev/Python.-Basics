@@ -22,11 +22,13 @@ class Car:
 
 
 class TownCar(Car):
+    max_speed = 60
+
     def __init__(self, speed, color, name, is_police):
         super().__init__(speed, color, name, is_police)
 
     def show_speed(self):
-        if self.speed > 60:
+        if self.speed > self.max_speed:
             return f'{self.name} превышение скорости!'
         else:
             return f'{self.name} - дозволительная скорость'
@@ -37,15 +39,11 @@ class SportCar(Car):
         super().__init__(speed, color, name, is_police)
 
 
-class WorkCar(Car):
+class WorkCar(TownCar):
+    max_speed = 40
+
     def __init__(self, speed, color, name, is_police):
         super().__init__(speed, color, name, is_police)
-
-    def show_speed(self):
-        if self.speed > 40:
-            return f'{self.name} превышение скорости!'
-        else:
-            return f'{self.name} - дозволительная скорость'
 
 
 class PoliceCar(Car):

@@ -1,22 +1,56 @@
-from time import sleep
+"""from time import sleep
 
 
 class TrafficLight:
     __color = ['Красный', 'Желтый', 'Зеленый']
+    red = 'Красный'
+    yellow = 'Жёлтый'
+    green = 'Зелёный'
 
     def running(self):
-        i = 0
-        while i < 3:
-            print(self.__color[i])
+        while True:
+            print(self.__color[])
             if i == 0:
                 sleep(7)
             elif i == 1:
                 sleep(2)
             elif i == 2:
                 sleep(5)
-            i += 1
+
 
 
 Traffic = TrafficLight()
-Traffic.running()
+Traffic.running()"""
+
+
+import time
+import threading
+
+
+class TrafficLight(threading.Thread):
+    __color = 0
+
+    def run(self):
+        self.__color = 'red'
+        print(f'Светофор: {self.__color}')
+        time.sleep(7)
+
+        self.__color = 'yellow'
+        print(f'Светофор: {self.__color}')
+        time.sleep(2)
+
+        self.__color = 'green'
+        print(f'Светофор: {self.__color}')
+        time.sleep(5)
+
+        while True:
+            self.run()
+
+
+traffic = TrafficLight()
+traffic.start()
+
+
+
+
 
