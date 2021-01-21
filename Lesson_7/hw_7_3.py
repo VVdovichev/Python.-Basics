@@ -11,7 +11,7 @@ class Cell:
                 raise ValueError
             else:
                 return f'Клетка стала меньше: {self.quantity - other.quantity}'
-        except:
+        except ValueError:
             print('Операция не возможна')
 
     def __mul__(self, other):
@@ -32,6 +32,6 @@ print(cell_1.__add__(cell_2))
 print(cell_1.__sub__(cell_2))
 print(cell_1.__mul__(cell_2))
 print(cell_1.__truediv__(cell_2))
-print(cell_1.make_order(12))
+print(cell_1.make_order(5))
 print()
-print(cell_2.make_order(20))
+print(cell_2.make_order(5))
