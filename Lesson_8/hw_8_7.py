@@ -1,17 +1,16 @@
-class ComplexNumber(Exception):
-    def __init__(self, arg):
-        self.arg = arg
-        if not int(arg):
-            raise TypeError
+class ComplexNumber:
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
 
     def __add__(self, other):
-        return f'Сумма: {self.arg + other.arg}'
+        return f'Сумма равна: {self.a + other.a} + {self.b + other.b} * i'
 
     def __mul__(self, other):
-        return f'Произведение: {self.arg * other.arg}'
+        return f'Произведение равно: {self.a * other.a - (self.b * other.b)} + {self.b * other.a} * i'
 
 
-num1 = ComplexNumber('a')
-num2 = ComplexNumber(5)
-print(num1 + num2)
-print(num1 * num2)
+c_1 = ComplexNumber(4, -8)
+c_2 = ComplexNumber(6, 11)
+print(c_1 + c_2)
+print(c_1 * c_2)
