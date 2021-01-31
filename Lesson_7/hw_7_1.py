@@ -14,4 +14,4 @@ class Matrix:
 
 m = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 m_new = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-print(m.__add__(m_new))
+print(m + m_new)
